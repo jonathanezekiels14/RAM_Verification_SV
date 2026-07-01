@@ -3,6 +3,8 @@
 `define DATA_WIDTH 8
 `define DATA_DEPTH 32
 
+
+`define num_of_transactions 8
 function integer log2(int n);
 	begin
 		log2 = 0;

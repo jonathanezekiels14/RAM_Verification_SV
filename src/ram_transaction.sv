@@ -4,6 +4,10 @@ class ram_transaction;
 	rand logic [ADDR_WIDTH-1:0] adddress;
 	rand logic write_enb, read_enb;
 
+	constraint write_constraint{
+		{write_enb,read_enb} == 2'b10;
+	}
+
 	function ram_transaction copy();
 		copy = new();
 		copy.data_in = this.data_in;
@@ -12,3 +16,4 @@ class ram_transaction;
 		copy.read_enb = this.read_enb;
 	endfunction
 endclass
+
