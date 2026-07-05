@@ -13,6 +13,7 @@ class ram_driver;
 		this.vif = vif;
 	endfunction
 
+	covergroup drv_cg;
 
 	task run();
 
@@ -27,6 +28,7 @@ class ram_driver;
 				vif.address <= 0;
 				vif.write_enb <= 0;
 				vif.read_enb <= 0;
+				drv_2_ref.put(drv_trans);
 			end
 			else begin
 				repeat(1) @(vif.drv_cb);
@@ -36,4 +38,11 @@ class ram_driver;
 				vif.read_enb <= drv_trans.read_enb;
 				drv_2_ref.put(drv_trans);
 				$display("DRIVER to INTERFACE DATA_IN = %0H | ADDR = %0h | WRITE_ENB = %0b | READ_ENB = %0b",drv_trans.data_in,drv_trans.address,drv_trans.write_enb,drv_trans.read_enb);
-				
+				drv_cg.sample();
+				$display("I/P Functional Coverage = %f%%",drv_cg.get_coverage());
+			end
+		end
+	endtask
+endclass
+
+

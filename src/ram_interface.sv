@@ -8,18 +8,18 @@ interface ram_if(input bit clk, input bit reset);
 
 
 	clocking drv_cb @(posedge clk);
-		default input #0 output #0;
+		default input #1step output #1ns;
 		input reset;
 		output data_in,address,write_enb,read_enb;
 	endclocking
 
 	clocking mon_cb @(posedge clk);
-		default input #0 output #0;
+		default input #1step;
 		input data_out;
 	endclocking
 
 	clocking ref_cb @(posedge clk);
-		default input #0 output #0;
+		default input #1step;
 	endclocking
 
 	modport DRV(clocking drv_cb);
