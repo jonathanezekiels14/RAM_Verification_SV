@@ -14,9 +14,9 @@ class ram_monitor;
 
 	covergroup mon_cg;
 
-		cp1: coverpoint mon_trans.data_out
+		DATA_OUT: coverpoint mon_trans.data_out
 		{
-			bins b1 = {[0:`DATA_WIDTH-1]};
+			bins b1 = {[0:255]};
 		}
 	endgroup
 
@@ -27,8 +27,11 @@ class ram_monitor;
 			mon_trans = new();
 			repeat (1) @(vif.mon_cb);
 			mon_trans.data_out = vif.data_out;
-
-			$display("MONITOR OUTPUT data_out = %h",mon_trans.data_out);
+			mon_trans.data_in = vif.data_in;
+			mon_trans.address = vif.address;
+			mon_trans.write_enb = vif.write_enb;
+			mon_trans.read_enb = vif.read_enb;
+			$display("[MONITOR] [%0t] OUTPUT DATA_OUT = %h",$time,mon_trans.data_out);
 			mon_2_scb.put(mon_trans);
 			mon_cg.sample();
 			repeat(1) @(vif.mon_cb);

@@ -8,7 +8,7 @@ class ram_referencemodel;
 
 	virtual ram_if.REF vif;
 
-	reg [`DATA_WIDTH-1:0] mem [`DATA_DEPTH-1:0];
+	reg [`DATA_WIDTH-1:0] mem [`ADDR_WIDTH-1:0];
 
 	function new(mailbox #(ram_transaction) drv_2_ref, mailbox #(ram_transaction) ref_2_scb, interface ram_if.REF vif);
 		this.drv_2_ref = drv_2_ref;
@@ -23,12 +23,12 @@ class ram_referencemodel;
 			repeat (1) @(vif.ref_cb);
 			if(ref_trans.write_enb == 1) begin
 				mem[ref_trans.address] = ref_trans.data_in;
-				$display("Reference Model Data in mem[%h] = %h",ref_trans.address,ref_trans.data_in);
+				$display("[REF] [%0t] Reference Model Data in MEM[%h] = %h",$time,ref_trans.address,ref_trans.data_in);
 			end
 
 			if(ref_trans.read_enb == 1) begin
 				ref_trans.data_out = mem[ref_trans.address];
-				$display("Reference model data out = %h",ref_trans.data_out);
+				$display("[REF] [%0t] Reference model DATA_OUT = %h",ref_trans.data_out);
 			end
 			ref_2_scb.put(ref_trans);
 		end
