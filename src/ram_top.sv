@@ -12,19 +12,26 @@ module top;
 
 	initial begin
 		@(posedge clk);
-		reset = 1;
-		@(posedge clk);
 		reset = 0;
+		@(posedge clk);
+		reset = 1;
 	end
 
 	ram_if intrf(clk,reset);
 
-	// DUT
+	RAM DUV(.data_in(intrf.data_in),
+		.write_enb(intrf.write_enb),
+		.read_enb(intrf.read_enb),
+		.data_out(intrf.data_out),
+		.address(intrf.address),
+		.clk(clk),
+		.reset(reset);
+	);
 	
-	ram_test test = new(intrf.DRV,intrf.MON,intrf.REF);
+	ram_regressio_test tb= new(intrf.DRV,intrf.MON,intrf.REF);
 
 	initial begin
-		test.run();
+		tb.run();
 		$finish;
 	end
 endmodule

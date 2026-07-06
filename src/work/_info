@@ -7,4 +7,29 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-d/fetools/work_area/frontend/Batch_11/jonathanezekiels/RAM_Verification_SV/src
+Z0 d/fetools/work_area/frontend/Batch_11/jonathanezekiels/RAM_Verification_SV/src
+vRAM
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1783317962
+!i10b 1
+!s100 TK]e<aBa:R]kYZTiKSUR02
+I5fRfB@cGAXT5_GddalPX?1
+VDg1SIo80bB@j0V0VzS_@n1
+!s105 ram_sv_unit
+S1
+R0
+w1783317955
+8ram.sv
+Fram.sv
+L0 12
+OE;L;10.6c;65
+r1
+!s85 0
+31
+!s108 1783317962.000000
+!s107 ram.sv|
+!s90 ram.sv|
+!i113 0
+o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+tCvgOpt 0
+n@r@a@m

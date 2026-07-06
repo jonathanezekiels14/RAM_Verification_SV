@@ -13,6 +13,6 @@ function integer log2(int n);
 	end
 endfunction
 
-parameter ADDR_WIDTH = log2(`DATA_DEPTH)
+parameter ADDR_WIDTH = log2(`DATA_DEPTH);
 
 
