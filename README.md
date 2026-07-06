@@ -9,7 +9,7 @@ The DUT is a synchronous single-port memory where all operations occur on the po
 | Signal | Width | Description |
 | :--- | :--- | :--- |
 | `clk` | 1-bit | System clock for all register updates. |
-| `reset` | 1-bit | Synchronous active-high reset. |
+| `reset` | 1-bit | Synchronous active-low reset. |
 | `write_enb` | 1-bit | Write enable signal. |
 | `read_enb` | 1-bit | Read enable signal. |
 | `data_in` | 8-bit | Write data input. |
