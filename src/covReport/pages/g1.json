@@ -1,0 +1,16 @@
+var g_data = {
+g84:[{dummy:0},
+{name:'drv_cg',f:1,type:1,id:85,tb:'10',h:'10',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],parent:'84'}],
+c85:{name:'drv_cg',type:1,pHash:'84',pPath:'/ram_package/ram_driver',totals:[6,6,'100.00%','G',4,4,'100.00%','G'],cvp:[{dummy:0},
+{name:'WRITE',f:1,type:4,id:86,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'85'},
+{name:'READ',f:1,type:4,id:87,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'85'},
+{name:'DATA_IN',f:1,type:4,id:88,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'85'},
+{name:'ADDRESS',f:1,type:4,id:89,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'85'}],crx:[{dummy:0},
+{name:'WRXRD',f:1,type:5,id:90,tb:'4',h:'4',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'85',cross:['WRITE','READ']}]},
+g91:[{dummy:0},
+{name:'mon_cg',f:1,type:1,id:92,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],parent:'91'}],
+c92:{name:'mon_cg',type:1,pHash:'91',pPath:'/ram_package/ram_monitor',totals:[1,1,'100.00%','G',0,0,'0.00%','R'],cvp:[{dummy:0},
+{name:'DATA_OUT',f:1,type:4,id:93,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hasb:1,parent:'92'}],crx:[{dummy:0}]},
+dummyEnd:0
+};
+processCovergroupsData(g_data);
