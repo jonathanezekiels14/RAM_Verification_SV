@@ -23,10 +23,8 @@ class ram_monitor;
                 for(int i=0; i<`num_of_transactions; i++) begin
                         mon_trans = new();
                         
-                        // Wait for a clock edge to sample
                         @(vif.mon_cb); 
                         
-                        // FIXED: All reads must go through the clocking block (.mon_cb.)
                         mon_trans.data_in   = vif.mon_cb.data_in;
                         mon_trans.address   = vif.mon_cb.address;
                         mon_trans.write_enb = vif.mon_cb.write_enb;

@@ -38,7 +38,6 @@ endclass
 
 class ram_test2 extends ram_test;
         ram_transaction2 trans;
-        // FIXED: Added missing comma after mon_if
         function new(virtual ram_if drv_if, virtual ram_if mon_if, virtual ram_if ref_if);
                 super.new(drv_if, mon_if, ref_if);
         endfunction
@@ -57,7 +56,6 @@ endclass
 
 class ram_test3 extends ram_test;
         ram_transaction3 trans;
-        // FIXED: Added missing comma after mon_if
         function new(virtual ram_if drv_if, virtual ram_if mon_if, virtual ram_if ref_if);
                 super.new(drv_if, mon_if, ref_if);
         endfunction
@@ -76,7 +74,6 @@ endclass
 
 class ram_test4 extends ram_test;
         ram_transaction4 trans;
-        // FIXED: Added missing comma after mon_if
         function new(virtual ram_if drv_if, virtual ram_if mon_if, virtual ram_if ref_if);
                 super.new(drv_if, mon_if, ref_if);
         endfunction
@@ -113,13 +110,12 @@ class ram_test_regression extends ram_test;
                 t3 = new(drv_vif, mon_vif, ref_vif);
                 t4 = new(drv_vif, mon_vif, ref_vif);
 
-                q.push_back(t0); // Base test
+                q.push_back(t0); 
                 q.push_back(t1);
                 q.push_back(t2);
                 q.push_back(t3);
                 q.push_back(t4);
 
-                // 5. Loop through the queue and call run() on each test class
                 foreach(q[i]) begin
                         $display("\n[REGRESSION] Launching Test Sequence %0d...", i);
                         q[i].run();
