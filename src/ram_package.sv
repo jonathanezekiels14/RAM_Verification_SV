@@ -1,4 +1,5 @@
 package ram_package; 
+	`include "defines.svh"
 	`include "ram_transaction.sv"
 	`include "ram_generator.sv" 
 	`include "ram_driver.sv" 

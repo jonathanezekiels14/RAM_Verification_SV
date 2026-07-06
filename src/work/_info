@@ -8,13 +8,22 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/fetools/work_area/frontend/Batch_11/jonathanezekiels/RAM_Verification_SV/src
+T_opt
+!s110 1783323386
+Vhn<em<`gTdm42m6XnG4V]0
+04 3 4 work top fast 0
+=1-6805caf5892e-6a4b5afa-706e5-37b2a
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OE;O;10.6c;65
 vRAM
-DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
 !s110 1783317962
 !i10b 1
 !s100 TK]e<aBa:R]kYZTiKSUR02
 I5fRfB@cGAXT5_GddalPX?1
-VDg1SIo80bB@j0V0VzS_@n1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 ram_sv_unit
 S1
 R0
@@ -22,7 +31,7 @@ w1783317955
 8ram.sv
 Fram.sv
 L0 12
-OE;L;10.6c;65
+Z4 OE;L;10.6c;65
 r1
 !s85 0
 31
@@ -30,6 +39,137 @@ r1
 !s107 ram.sv|
 !s90 ram.sv|
 !i113 0
-o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-tCvgOpt 0
+Z5 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
 n@r@a@m
+Yram_if
+R2
+Z6 !s110 1783323383
+!i10b 1
+!s100 3INAji2o_;7Moe2d2SXck2
+IR=zcgikTn0^_cmPoFzOY53
+R3
+Z7 !s105 ram_top_sv_unit
+S1
+R0
+w1783323003
+Z8 8ram_interface.sv
+Z9 Fram_interface.sv
+L0 2
+R4
+r1
+!s85 0
+31
+Z10 !s108 1783323383.000000
+Z11 !s107 ram_interface.sv|ram_test.sv|ram_environment.sv|ram_scoreboard.sv|ram_referencemodel.sv|ram_monitor.sv|ram_driver.sv|ram_generator.sv|ram_transaction.sv|defines.svh|ram_top.sv|ram_package.sv|
+Z12 !s90 ram_package.sv|ram_top.sv|
+!i113 0
+R5
+R1
+Xram_interface_sv_unit
+R2
+VRed6SHZ3FeNHjk:IMSR:K1
+r1
+!s85 0
+31
+!i10b 1
+!s100 bMSHfBTH[W_hOCWV]zM_A2
+IRed6SHZ3FeNHjk:IMSR:K1
+!i103 1
+S1
+R0
+w1783320175
+R8
+R9
+Z13 Fdefines.svh
+L0 8
+R4
+!s108 1783320176.000000
+!s107 defines.svh|ram_interface.sv|
+!s90 ram_interface.sv|
+!i113 0
+R5
+R1
+Xram_package
+!s115 ram_if
+R2
+R6
+!i10b 1
+!s100 0TaV>JG@Ndbf=HKU]]_1U0
+I;abT0GE`]UZa;^6e21HU73
+V;abT0GE`]UZa;^6e21HU73
+S1
+R0
+w1783323374
+8ram_package.sv
+Fram_package.sv
+R13
+Fram_transaction.sv
+Fram_generator.sv
+Fram_driver.sv
+Fram_monitor.sv
+Fram_referencemodel.sv
+Fram_scoreboard.sv
+Fram_environment.sv
+Fram_test.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R5
+R1
+Xram_top_sv_unit
+R2
+VbHR9^UYGKkc94d6A>H5]R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 n=XSW=mjTWb8o2z6iSeHe3
+IbHR9^UYGKkc94d6A>H5]R0
+!i103 1
+S1
+R0
+w1783321127
+Z14 8ram_top.sv
+Z15 Fram_top.sv
+R9
+R13
+L0 8
+R4
+!s108 1783321129.000000
+R11
+R12
+!i113 0
+R5
+R1
+vtop
+R2
+DXx4 work 11 ram_package 0 22 ;abT0GE`]UZa;^6e21HU73
+R6
+!i10b 1
+!s100 I[0]7hN?XN<9DHCn>?Jm32
+IQ;T71c1@eJcbhPY5L4bZl0
+R3
+R7
+S1
+R0
+w1783323039
+R14
+R15
+L0 2
+R4
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R5
+R1

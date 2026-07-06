@@ -1,24 +1,20 @@
-`include "defines.svh"
 
 class ram_scoreboard;
 
 	ram_transaction ref_trans,mon_trans;
 	mailbox #(ram_transaction) ref_2_scb;
 	mailbox #(ram_transaction) mon_2_scb;
-	logic [`DATA_WIDTH-1:0] ref_mem [`DATA_DEPTH-1:0];
-	logic [`DATA_WIDTH-1:0] mon_mem [`DATA_DEPTH-1:0];
+	logic [`DATA_WIDTH-1:0] ref_mem [`DATA_DEPTH];
+	logic [`DATA_WIDTH-1:0] mon_mem [`DATA_DEPTH];
 	int pass_count,fail_count;
 
-	function new(mailbox #(ram_transaction) ref_2_scb, mailbox #(ram_transaction));
+	function new(mailbox #(ram_transaction) ref_2_scb, mailbox #(ram_transaction) mon_2_scb);
 		this.ref_2_scb = ref_2_scb;
 		this.mon_2_scb = mon_2_scb;
 	endfunction
 
 	task run();
-		for(int i=0;i<num_of_transactions;i++) begin
-			mon_trans = new();
-			ref_trans = new();
-
+		for(int i=0;i<`num_of_transactions;i++) begin
 			fork
 				begin
 					ref_2_scb.get(ref_trans);
@@ -32,8 +28,7 @@ class ram_scoreboard;
 				end
 			join
 
-			if( i != (`num_of_transactions - 1))
-				compare_report();
+			compare_report();
 		end
 	endtask
 

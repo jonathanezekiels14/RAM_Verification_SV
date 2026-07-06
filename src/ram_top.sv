@@ -1,19 +1,18 @@
-`include "defines.svh"
-
+`include "ram_interface.sv"
 module top;
 	import ram_package::*;
 
-	bit clk;
+	bit clock;
 	bit reset;
 
 	initial begin
-		forever #10 clk = ~clk;
+		forever #10 clock = ~clock;
 	end
 
 	initial begin
-		@(posedge clk);
+		@(posedge clock);
 		reset = 0;
-		@(posedge clk);
+		@(posedge clock);
 		reset = 1;
 	end
 
@@ -24,13 +23,12 @@ module top;
 		.read_enb(intrf.read_enb),
 		.data_out(intrf.data_out),
 		.address(intrf.address),
-		.clk(clk),
-		.reset(reset);
+		.clk(clock),
+		.reset(reset)
 	);
-	
-	ram_regressio_test tb= new(intrf.DRV,intrf.MON,intrf.REF);
-
+	ram_test_regression tb; 
 	initial begin
+		tb= new(intrf.DRV,intrf.MON,intrf.REF);
 		tb.run();
 		$finish;
 	end

@@ -1,4 +1,3 @@
-`include "defines.svh"
 class ram_generator;
 
 	ram_transaction gen_trans;

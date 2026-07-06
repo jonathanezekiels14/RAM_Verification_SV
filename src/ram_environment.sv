@@ -1,4 +1,3 @@
-`include "defines.svh"
 
 class ram_environment;
 
@@ -26,7 +25,7 @@ class ram_environment;
 	task build();
 		begin
 			gen_2_drv = new();
-			drv_2_scb = new();
+			drv_2_ref = new();
 			ref_2_scb = new();
 			mon_2_scb = new();
 		

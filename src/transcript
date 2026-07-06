@@ -1,0 +1,30 @@
+# vsim -c top 
+# Start time: 13:06:26 on Jul 06,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: ram_top.sv(19): (vopt-2958) Implicit wire 'clk' does not have any driver.
+# //  Questa Sim
+# //  Version 10.6c linux Jul 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.ram_if(fast)
+# Loading work.ram_package(fast)
+# Loading work.top(fast)
+# [GENERATOR][                   0] Randomized  DATA_IN = 39 | ADDR = a | WRITE_ENB = 0 | READ_ENB = 1
+# [GENERATOR][                   0] Randomized  DATA_IN = 28 | ADDR = b | WRITE_ENB = 0 | READ_ENB = 1
+# [GENERATOR][                   0] Randomized  DATA_IN = c4 | ADDR = 17 | WRITE_ENB = 1 | READ_ENB = 0
+# [GENERATOR][                   0] Randomized  DATA_IN = 43 | ADDR = 1 | WRITE_ENB = 0 | READ_ENB = 1
+# [GENERATOR][                   0] Randomized  DATA_IN = 90 | ADDR = 8 | WRITE_ENB = 1 | READ_ENB = 0
+# [GENERATOR][                   0] Randomized  DATA_IN = c6 | ADDR = 19 | WRITE_ENB = 0 | READ_ENB = 1
+# [GENERATOR][                   0] Randomized  DATA_IN = 21 | ADDR = 18 | WRITE_ENB = 0 | READ_ENB = 1
+# [GENERATOR][                   0] Randomized  DATA_IN = be | ADDR = 1c | WRITE_ENB = 1 | READ_ENB = 0
