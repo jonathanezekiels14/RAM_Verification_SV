@@ -19,14 +19,18 @@ class ram_referencemodel;
 		for(int i = 0;i<`num_of_transactions;i++) begin
 			drv_2_ref.get(ref_trans);
 			repeat (1) @(vif.ref_cb);
-			if(ref_trans.write_enb == 1) begin
+			if(ref_trans.write_enb && !(ref_trans.read_enb)) begin
 				mem[ref_trans.address] = ref_trans.data_in;
 				$display("[REF] [%0t] Reference Model Data in MEM[%h] = %h",$time,ref_trans.address,ref_trans.data_in);
 			end
 
-			if(ref_trans.read_enb == 1) begin
+			if(ref_trans.read_enb && !(ref_trans.write_enb)) begin
 				ref_trans.data_out = mem[ref_trans.address];
 				$display("[REF] [%0t] Reference model DATA_OUT = %h",$time,ref_trans.data_out);
+			end
+			else begin
+				ref_trans.data_out = 'hzz;
+				$display("[REF] [%0t] Reference model DATA_OUT = Z (Read Disabled)",$time);
 			end
 			ref_2_scb.put(ref_trans);
 		end

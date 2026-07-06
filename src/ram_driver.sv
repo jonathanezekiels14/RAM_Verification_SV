@@ -34,7 +34,6 @@ class ram_driver;
                 for(int i=0; i<`num_of_transactions; i++) begin
                         gen_2_drv.get(drv_trans);
                         
-                        // FIXED: Changed reset check from == 1 to == 0 to match top module
                         if(vif.reset == 0) begin
                                 @(vif.drv_cb);
                                 vif.drv_cb.data_in <= 'hz;
