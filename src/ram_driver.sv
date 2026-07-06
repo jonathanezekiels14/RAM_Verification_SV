@@ -34,10 +34,9 @@ class ram_driver;
                 for(int i=0; i<`num_of_transactions; i++) begin
                         gen_2_drv.get(drv_trans);
                         
-                        if(vif.reset == 1) begin
+                        // FIXED: Changed reset check from == 1 to == 0 to match top module
+                        if(vif.reset == 0) begin
                                 @(vif.drv_cb);
-                                
-                                // FIXED: All drive assignments MUST go through the clocking block (.drv_cb.)
                                 vif.drv_cb.data_in <= 'hz;
                                 vif.drv_cb.address <= 0;
                                 vif.drv_cb.write_enb <= 0;
@@ -46,19 +45,17 @@ class ram_driver;
                                 drv_2_ref.put(drv_trans);
                                 @(vif.drv_cb);
                                 
-                                // FIXED: Made the print statement match the actual reset values being driven
                                 $display("[DRIVER] [%0t] Driving RESET to Interface: DATA_IN = %0H | WRITE_ENB = 0 | READ_ENB = 0 | ADDR = 0", $time, 8'hz);
                         end
                         else begin
                                 @(vif.drv_cb);
-                                
-                                // FIXED: All drive assignments MUST go through the clocking block (.drv_cb.)
                                 vif.drv_cb.data_in <= drv_trans.data_in;
                                 vif.drv_cb.address <= drv_trans.address;
                                 vif.drv_cb.write_enb <= drv_trans.write_enb;
                                 vif.drv_cb.read_enb <= drv_trans.read_enb;
                                 
                                 drv_2_ref.put(drv_trans);
+				@(vif.drv_cb);
                                 
                                 $display("[DRIVER] [%0t] to INTERFACE DATA_IN = %0H | ADDR = %0h | WRITE_ENB = %0b | READ_ENB = %0b", $time, drv_trans.data_in, drv_trans.address, drv_trans.write_enb, drv_trans.read_enb);
                                 

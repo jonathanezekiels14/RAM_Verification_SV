@@ -27,19 +27,18 @@ class ram_monitor;
                         @(vif.mon_cb); 
                         
                         // FIXED: All reads must go through the clocking block (.mon_cb.)
-                        mon_trans.data_out  = vif.mon_cb.data_out;
                         mon_trans.data_in   = vif.mon_cb.data_in;
                         mon_trans.address   = vif.mon_cb.address;
                         mon_trans.write_enb = vif.mon_cb.write_enb;
                         mon_trans.read_enb  = vif.mon_cb.read_enb;
                         
+			@(vif.mon_cb);
+                        mon_trans.data_out  = vif.mon_cb.data_out;
                         $display("[MONITOR] [%0t] OUTPUT DATA_OUT = %h", $time, mon_trans.data_out);
                         
                         mon_2_scb.put(mon_trans);
                         mon_cg.sample();
                         
-                        // Wait for the next clock edge before looping again
-                        @(vif.mon_cb);
                 end
         endtask
 endclass

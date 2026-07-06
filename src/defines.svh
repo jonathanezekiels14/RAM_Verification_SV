@@ -4,7 +4,7 @@
 `define DATA_DEPTH 32
 
 
-`define num_of_transactions 8
+`define num_of_transactions 64
 
 `define ADDR_WIDTH 5
 

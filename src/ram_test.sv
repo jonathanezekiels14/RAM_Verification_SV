@@ -95,37 +95,34 @@ endclass
 
 
 class ram_test_regression extends ram_test;
-        ram_transaction q[$];
-        ram_transaction t0;
-        ram_transaction1 t1;
-        ram_transaction2 t2;
-        ram_transaction3 t3;
-        ram_transaction4 t4;
+        ram_test q[$];
+        ram_test t0;
+        ram_test1 t1;
+        ram_test2 t2;
+        ram_test3 t3;
+        ram_test4 t4;
 
         function new(virtual ram_if drv_vif, virtual ram_if mon_vif, virtual ram_if ref_vif);
-                // FIXED: Changed drv_if to drv_vif
                 super.new(drv_vif, mon_vif, ref_vif);
         endfunction
 
         virtual task run();
-                env = new(drv_vif, mon_vif, ref_vif);
-                env.build();
-                t0 = new();
-                q.push_back(t0);
-                t1 = new();
+                t0 = new(drv_vif, mon_vif, ref_vif);
+                t1 = new(drv_vif, mon_vif, ref_vif);
+                t2 = new(drv_vif, mon_vif, ref_vif);
+                t3 = new(drv_vif, mon_vif, ref_vif);
+                t4 = new(drv_vif, mon_vif, ref_vif);
+
+                q.push_back(t0); // Base test
                 q.push_back(t1);
-                t2 = new();
                 q.push_back(t2);
-                t3 = new();
-                // FIXED: Pushing to the queue 'q', not 't3'
                 q.push_back(t3);
-                t4 = new();
-                // FIXED: Pushing to the queue 'q', not 't4'
                 q.push_back(t4);
 
+                // 5. Loop through the queue and call run() on each test class
                 foreach(q[i]) begin
-                        env.gen.gen_trans = q[i];
-                        env.run();
+                        $display("\n[REGRESSION] Launching Test Sequence %0d...", i);
+                        q[i].run();
                 end
         endtask
 endclass

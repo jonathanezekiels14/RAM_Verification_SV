@@ -16,7 +16,7 @@ module top;
 		reset = 1;
 	end
 
-	ram_if intrf(clk,reset);
+	ram_if intrf(clock,reset);
 
 	RAM DUV(.data_in(intrf.data_in),
 		.write_enb(intrf.write_enb),
